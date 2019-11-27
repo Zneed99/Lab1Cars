@@ -1,11 +1,14 @@
 import java.awt.*;
 
+/**
+ * Type of car
+ */
 public class Volvo240 extends AbstractCar {
 
     private final static double trimFactor = 1.25;
 
     public Volvo240() {
-        super(4, 100, Color.black, "Volvo240", 0, 0, Direction.DOWN);
+        super(4, 100, Color.black, "Volvo240", 0, 0, Direction.DOWN,2);
     }
 
     /**

@@ -11,6 +11,8 @@ public abstract class AbstractCar implements Moveable {
     private double x;
     private double y;
     private Direction direction;
+    private int size;
+    private boolean isLoaded;
 
     /**
      * @param nrDoors     Number of doors on the car
@@ -22,7 +24,7 @@ public abstract class AbstractCar implements Moveable {
      * @param direction   Direction of the car
      */
 
-    AbstractCar(int nrDoors, double enginePower, Color color, String modelName, double x, double y, Direction direction) {
+    AbstractCar(int nrDoors, double enginePower, Color color, String modelName, double x, double y, Direction direction, int size) {
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.color = color;
@@ -30,27 +32,32 @@ public abstract class AbstractCar implements Moveable {
         this.x = x;
         this.y = y;
         this.direction = direction;
+        this.size = size;
+        this.isLoaded = false;
         stopEngine();
     }
 
     /**
      * Moves the car
      */
+    //Need to fix! Can't move if loaded to a truck
     @Override
     public void move() {
-        switch (direction) {
-            case UP:
-                this.y += currentSpeed;
-                break;
-            case LEFT:
-                this.x -= currentSpeed;
-                break;
-            case DOWN:
-                this.y -= currentSpeed;
-                break;
-            case RIGHT:
-                this.x += currentSpeed;
-                break;
+        if (!isLoaded) {
+            switch (direction) {
+                case UP:
+                    this.y += currentSpeed;
+                    break;
+                case LEFT:
+                    this.x -= currentSpeed;
+                    break;
+                case DOWN:
+                    this.y -= currentSpeed;
+                    break;
+                case RIGHT:
+                    this.x += currentSpeed;
+                    break;
+            }
         }
     }
 
@@ -159,7 +166,7 @@ public abstract class AbstractCar implements Moveable {
         return enginePower;
     }
 
-    double getCurrentSpeed() {
+   public double getCurrentSpeed() {
         return currentSpeed;
     }
 
@@ -169,6 +176,26 @@ public abstract class AbstractCar implements Moveable {
 
     public double getY() {
         return y;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 
     public Direction getDirection() {
@@ -185,7 +212,7 @@ public abstract class AbstractCar implements Moveable {
     /**
      * Sets the speed value on the car to 0
      */
-    private void stopEngine() {
+     void stopEngine() {
         currentSpeed = 0;
     }
 
@@ -195,5 +222,14 @@ public abstract class AbstractCar implements Moveable {
     protected enum Direction {
         UP, DOWN, LEFT, RIGHT;
 
+    }
+
+
+    public boolean isLoaded() {
+        return isLoaded;
+    }
+
+    public void setLoaded(boolean loaded) {
+        isLoaded = loaded;
     }
 }

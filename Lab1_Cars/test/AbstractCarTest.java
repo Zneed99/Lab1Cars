@@ -6,27 +6,44 @@ public class AbstractCarTest extends TestCase {
 
     private Volvo240 volvo;
     private Saab95 saab;
+    Ramp ramp;
+    Storage<Volvo240> storage;
+    Storage<AbstractCar> aStorage;
+    CarTransport carTransport;
+
 
     @Before
     public void setUp() {
         volvo = new Volvo240();
         saab = new Saab95();
+        storage = new Storage(100, 0);
+        ramp = new Ramp();
+        aStorage = new Storage<>(4, 0);
+        carTransport = new CarTransport(ramp);
+
     }
 
     @Test
     public void testMove() {
-        volvo.startEngine();
-        volvo.move();
-        volvo.turnLeft();
-        volvo.move();
-        volvo.turnLeft();
-        volvo.move();
-        volvo.turnLeft();
-        volvo.move();
-        volvo.turnLeft();
-        volvo.move();
-        assertEquals(-0.1, volvo.getY());
+
+        if (ramp.isUp()) {
+            volvo.startEngine();
+            volvo.move();
+            volvo.turnLeft();
+            volvo.move();
+            volvo.turnLeft();
+            volvo.move();
+            volvo.turnLeft();
+            volvo.move();
+            volvo.turnLeft();
+            volvo.move();
+            assertEquals(-0.1, volvo.getY());
+
+        }
+
+
     }
+
 
     @Test
     public void testTurnRight() {
@@ -44,6 +61,7 @@ public class AbstractCarTest extends TestCase {
         assertEquals(1.25, volvo.getCurrentSpeed());
     }
 
+
     @Test
     public void testSaabGas() {
         saab.gas(1);
@@ -52,28 +70,28 @@ public class AbstractCarTest extends TestCase {
 
     @Test
     public void testSaabBrake() {
-        //saab.setCurrentSpeed(1.25);
+        saab.gas(1);
         saab.brake(1);
         assertEquals(0.0, saab.getCurrentSpeed());
     }
 
     @Test
     public void testVolvoBrake() {
-        //volvo.setCurrentSpeed(1.25);
+        volvo.gas(1);
         volvo.brake(1);
         assertEquals(0.0, volvo.getCurrentSpeed());
     }
 
     @Test
     public void testBrakeHighValue() {
-        //volvo.setCurrentSpeed(1.25);
+        volvo.gas(1);
         volvo.brake(4);
         assertEquals(0.0, volvo.getCurrentSpeed());
     }
 
     @Test
     public void testBrakeLowValue() {
-        //volvo.setCurrentSpeed(1.25);
+        volvo.gas(1);
         volvo.brake(-4);
         assertEquals(1.25, volvo.getCurrentSpeed());
     }
@@ -89,4 +107,7 @@ public class AbstractCarTest extends TestCase {
         saab.gas(-4);
         assertEquals(0.0, saab.getCurrentSpeed());
     }
+
 }
+
+
