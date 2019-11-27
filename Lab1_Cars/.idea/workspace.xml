@@ -2,33 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e16a0b-0dce-4a99-9cc3-f54a65d67863" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/CarController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/pics/Saab95.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/pics/Scania.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/pics/Volvo240.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CarTransport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CarView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Ramp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ScaniaTruck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Storage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WorkShop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pics/Saab95.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pics/Scania.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pics/Volvo240.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/CarTransportTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/ScaniaTruckTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/StorageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/WorkShopTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab1_Cars.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1_Cars.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/AbstractCar$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/AbstractCar$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/AbstractCar$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/AbstractCar$Direction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/AbstractCar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/AbstractCar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/Lab1del1PM.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/Lab1del1PM.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/Lab1del2PM.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/Lab1del2PM.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/Moveable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/Moveable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/Saab95.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/Saab95.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/Volvo240.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/Volvo240.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Lab1_Cars/AbstractCarTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Lab1_Cars/AbstractCarTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractCar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab1del1PM.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1del1PM.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab1del2PM.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1del2PM.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Moveable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moveable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Saab95.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Saab95.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Volvo240.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Volvo240.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AbstractCarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AbstractCarTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/.idea/Test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/src/yeeet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hej.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/Saab95.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/Volvo240.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Lab1_Cars/AbstractCarTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Lab1_Cars/META-INF/Lab1_Cars.kotlin_module" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,6 +162,13 @@
       <option name="presentableId" value="Default" />
       <updated>1573045117264</updated>
     </task>
+    <task id="LOCAL−00001" summary="hotfuzz">
+      <created>1574867696448</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1574867696448</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,6 +183,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="hotfuzz" />
+    <option name="LAST_COMMIT_MESSAGE" value="hotfuzz" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/OOD_LAB1_Cars$All_in_Lab1_Cars.ic" NAME="All in Lab1_Cars Coverage Results" MODIFIED="1573821525323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
