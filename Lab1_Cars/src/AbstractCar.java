@@ -46,13 +46,13 @@ public abstract class AbstractCar implements Moveable {
         if (!isLoaded) {
             switch (direction) {
                 case UP:
-                    this.y += currentSpeed;
+                    this.y -= currentSpeed;
                     break;
                 case LEFT:
                     this.x -= currentSpeed;
                     break;
                 case DOWN:
-                    this.y -= currentSpeed;
+                    this.y += currentSpeed;
                     break;
                 case RIGHT:
                     this.x += currentSpeed;

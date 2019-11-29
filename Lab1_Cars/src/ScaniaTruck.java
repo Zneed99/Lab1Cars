@@ -14,7 +14,7 @@ public class ScaniaTruck extends AbstractCar {
      * @param degree
      */
     public ScaniaTruck(double degree) {
-        super(2,200,Color.red,"Scania 2000",0,0,Direction.DOWN, 17);
+        super(2,200,Color.red,"Scania 2000",0,0,Direction.RIGHT, 17);
         this.degree = 0;
     }
 

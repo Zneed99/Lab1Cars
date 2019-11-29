@@ -5,7 +5,7 @@ public class Saab95 extends AbstractCar {
     private boolean turboOn;
 
     public Saab95() {
-        super(2, 125, Color.red, "Saab95", 0, 0, Direction.DOWN,2);
+        super(2, 125, Color.red, "Saab95", 0, 0, Direction.RIGHT,2);
         turboOn = false;
     }
 

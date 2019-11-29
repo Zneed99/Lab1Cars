@@ -13,12 +13,13 @@ import java.awt.event.ActionListener;
  * TODO: Write more actionListeners and wire the rest of the buttons
  **/
 
-public class CarView extends JFrame{
+public class CarView<T extends AbstractCar> extends JFrame{
     private static final int X = 800;
     private static final int Y = 800;
 
     // The controller member
     CarController carC;
+    T car;
 
     DrawPanel drawPanel = new DrawPanel(X, Y-240);
 
