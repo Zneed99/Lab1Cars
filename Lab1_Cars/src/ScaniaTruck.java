@@ -35,20 +35,24 @@ public class ScaniaTruck extends AbstractCar {
      * Raises or lowers the truck's bed
      */
     public void raiseOrLower() {
-        switch (rol) {
-            case RAISE:
-                if (getDegree() + 2 > 70) {
+        if (!(getCurrentSpeed() > 0))
+        {
+            switch (rol) {
+                case RAISE:
+                    if (getDegree() + 2 > 70) {
+                        break;
+                    }
+                    setDegree(getDegree() + 2);
                     break;
-                }
-                setDegree(getDegree() + 2);
-                break;
-            case LOWER:
-                if (getDegree() - 2 < 0) {
+                case LOWER:
+                    if (getDegree() - 2 < 0) {
+                        break;
+                    }
+                    setDegree(getDegree() - 2);
                     break;
-                }
-                setDegree(getDegree() - 2);
-                break;
+            }
         }
+
     }
 
     /**
@@ -82,9 +86,6 @@ public class ScaniaTruck extends AbstractCar {
     public void setRol(raiseOrLower rol) {
         this.rol = rol;
     }
-
-
-
 }
 
 

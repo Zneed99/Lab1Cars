@@ -134,14 +134,16 @@ public abstract class AbstractCar implements Moveable {
      * @param amount A value between [0,1]. If set higher or lower it will be changed to a valid number
      */
     public void gas(double amount) {
-        if (0 <= amount && amount <= 1) {
-            incrementSpeed(amount);
-        } else if (amount > 1) {
-            amount = 1;
-            incrementSpeed(amount);
-        } else if (amount < 0) {
-            amount = 0;
-            incrementSpeed(amount);
+        if ( !(getCurrentSpeed() == 0)){
+            if (0 <= amount && amount <= 1) {
+                incrementSpeed(amount);
+            } else if (amount > 1) {
+                amount = 1;
+                incrementSpeed(amount);
+            } else if (amount < 0) {
+                amount = 0;
+                incrementSpeed(amount);
+            }
         }
     }
 
@@ -170,7 +172,7 @@ public abstract class AbstractCar implements Moveable {
         return currentSpeed;
     }
 
-    private void setCurrentSpeed(double currentSpeed) {
+    public void setCurrentSpeed(double currentSpeed) {
         this.currentSpeed = currentSpeed;
     }
 

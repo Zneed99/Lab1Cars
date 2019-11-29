@@ -51,6 +51,13 @@ public class CarController<T extends AbstractCar> {
                 int x = (int) Math.round(car.getX());
                 int y = (int) Math.round(car.getY());
                 frame.drawPanel.moveIt(x, y, car.getClass());
+
+                if (x > 700 || x < 0 || y > 700 || y < 0){
+                    car.setCurrentSpeed(car.getCurrentSpeed());
+                    car.turnLeft();
+                    car.turnLeft();
+                }
+
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
             }
@@ -62,6 +69,60 @@ public class CarController<T extends AbstractCar> {
         double gas = ((double) amount) / 100;
         for (T car : cars) {
             car.gas(gas);
+        }
+    }
+
+    void brake(int amount){
+        for (T car : cars){
+            car.brake(amount);
+        }
+    }
+
+    void turboOn(){
+        for (T car : cars){
+            if (car instanceof Saab95){
+                ((Saab95) car).setTurboOn();
+            }
+        }
+    }
+
+    void turboOff(){
+        for (T car : cars){
+            if (car instanceof Saab95){
+                ((Saab95) car).setTurboOff();
+            }
+        }
+    }
+
+    void raiseBed(){
+        for (T car : cars){
+            if (car instanceof ScaniaTruck){
+                ((ScaniaTruck) car).setRol(ScaniaTruck.raiseOrLower.RAISE);
+                ((ScaniaTruck) car).raiseOrLower();
+                System.out.println(((ScaniaTruck) car).getDegree());
+            }
+        }
+    }
+
+    void lowerBed(){
+        for (T car : cars){
+            if (car instanceof ScaniaTruck){
+                ((ScaniaTruck) car).setRol(ScaniaTruck.raiseOrLower.LOWER);
+                ((ScaniaTruck) car).raiseOrLower();
+                System.out.println(((ScaniaTruck) car).getDegree());
+            }
+        }
+    }
+
+    void startCars(){
+        for (T car : cars){
+            car.startEngine();
+        }
+    }
+
+    void stopCars(){
+        for(T car : cars){
+            car.stopEngine();
         }
     }
 }
