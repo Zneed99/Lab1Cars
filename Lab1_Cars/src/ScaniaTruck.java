@@ -7,7 +7,6 @@ public class ScaniaTruck extends AbstractCar {
 
     private int degree;
     private raiseOrLower rol;
-    private Direction direction;
 
     /**
      * The degree on the truck's bed
@@ -34,6 +33,13 @@ public class ScaniaTruck extends AbstractCar {
     /**
      * Raises or lowers the truck's bed
      */
+    @Override
+    public void move(){
+        if(!(isLoading())) {
+            super.move();
+        }
+    }
+
     public void raiseOrLower() {
         if (!(getCurrentSpeed() > 0))
         {
@@ -60,6 +66,7 @@ public class ScaniaTruck extends AbstractCar {
      * @return
      */
     private boolean isLoading() {
+
         return getDegree() != 0;
     }
 
@@ -78,9 +85,8 @@ public class ScaniaTruck extends AbstractCar {
      */
     @Override
     public void gas(double amount) {
-        if (!(isLoading())) {
+
             super.gas(amount);
-        }
     }
 
     public void setRol(raiseOrLower rol) {
