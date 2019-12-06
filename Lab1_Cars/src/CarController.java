@@ -57,8 +57,7 @@ public class CarController {
 
                 if (x > 700 || x < 0 || y > 700 || y < 0){
                     car.setCurrentSpeed(car.getCurrentSpeed());
-                    car.turnLeft();
-                    car.turnLeft();
+                    car.uTurn();
                 }
 
                 // repaint() calls the paintComponent method of the panel

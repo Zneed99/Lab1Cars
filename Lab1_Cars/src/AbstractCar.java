@@ -102,6 +102,10 @@ public abstract class AbstractCar implements Moveable {
                 break;
         }
     }
+    public void uTurn(){
+        turnLeft();
+        turnLeft();
+    }
 
     /**
      * All classes override this function to fit the class
