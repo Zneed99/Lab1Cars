@@ -24,4 +24,6 @@ public class Volvo240 extends AbstractCar {
     private double getTrimFactor() {
         return trimFactor;
     }
+
+
 }

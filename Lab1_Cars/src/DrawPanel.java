@@ -12,35 +12,27 @@ import javax.swing.*;
 
 // This panel represent the animated part of the view with the car images.
 
-public class DrawPanel<T extends AbstractCar> extends JPanel {
+public class DrawPanel extends JPanel {
 
     // Just a single image, TODO: Generalize
    // private List<BufferedImage> images = new ArrayList<>();
     // To keep track of a singel cars position
-    private BufferedImage volvoImage;
-    private BufferedImage saabImage;
-    private BufferedImage scaniaImage;
+
+    HashMap<String, BufferedImage> carPositions = new HashMap<>();
 
 
-    private Point volvoPoint = new Point();
-    private Point saabPoint = new Point();
-    private Point scaniaPoint = new Point();
+    ArrayList<AbstractCar> carList = new ArrayList<>();
 
-    //HashMap<T, BufferedImage> carPositions;
 
-    // TODO: Make this genereal for all cars
-    void moveIt(int x, int y, Class car) {
-        if(car.equals(Volvo240.class)){
-            volvoPoint.setLocation(x,y);
-        }
-        if(car.equals(Saab95.class)){
-            saabPoint.setLocation(x, y);
-        }
-        if(car.equals(ScaniaTruck.class)){
-            scaniaPoint.setLocation(x, y);
-        }
-    }
+//void moveIt(AbstractCar car){
+ //   if(car.equals(Volvo240.class)){
 
+  //  }
+
+//}
+
+
+    // TODO: Make this general for all cars
     // Initializes the panel and reads the images
     public DrawPanel(int x, int y) {
         this.setDoubleBuffered(true);
@@ -49,13 +41,10 @@ public class DrawPanel<T extends AbstractCar> extends JPanel {
 
         // Print an error message in case file is not found with a try/catch block
         try {
-            //carPositions.put(car, ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Volvo240.jpg")));
-            //carPositions.put(car, ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Saab95.jpg")));
-            //carPositions.put(car, ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Scania.jpg")));
+            carPositions.put("Volvo240", ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Volvo240.jpg")));
+            carPositions.put("Saab95", ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Saab95.jpg")));
+            carPositions.put("Scania 2000", ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Scania.jpg")));
 
-            volvoImage = (ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Volvo240.jpg")));
-            saabImage =(ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Saab95.jpg")));
-            scaniaImage =(ImageIO.read(DrawPanel.class.getResourceAsStream("pics/Scania.jpg")));
 
         }catch (IOException ex)
         {
@@ -72,15 +61,10 @@ public class DrawPanel<T extends AbstractCar> extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(volvoImage, volvoPoint.x, volvoPoint.y, null); // see javadoc for more info on the parameters
-        g.drawImage(saabImage, saabPoint.x, saabPoint.y + 100, null); // see javadoc for more info on the parameters
-        g.drawImage(scaniaImage, scaniaPoint.x, scaniaPoint.y + 200, null); // see javadoc for more info on the parameters
-        /*
-        for( int i = 0; i < images.size(); i++){
-            g.drawImage(images.get(i), carPoint.x, carPoint.y, null); // see javadoc for more info on the parameters
-            carPoint.y += 100;
+        int distance = 0;
+        for (AbstractCar cars : carList){
+            g.drawImage(carPositions.get(cars.getModelName()) ,(int) cars.getX(), (int) cars.getY() + distance, null); // see javadoc for more info on the parameters
+            distance += 100;
         }
-         */
     }
 }
-

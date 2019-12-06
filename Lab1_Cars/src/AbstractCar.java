@@ -234,4 +234,8 @@ public abstract class AbstractCar implements Moveable {
     public void setLoaded(boolean loaded) {
         isLoaded = loaded;
     }
+
+    public String getModelName() {
+        return modelName;
+    }
 }

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 * modifying the model state and the updating the view.
  */
 
-public class CarController<T extends AbstractCar> {
+public class CarController {
     // member fields:
 
     // The delay (ms) corresponds to 20 updates a sec (hz)
@@ -21,7 +21,8 @@ public class CarController<T extends AbstractCar> {
     // The frame that represents this instance View of the MVC pattern
     CarView frame;
     // A list of cars, modify if needed
-    ArrayList<T> cars = new ArrayList<>();
+    public ArrayList<AbstractCar> cars = new ArrayList<>();
+
 
     //methods:
 
@@ -29,12 +30,14 @@ public class CarController<T extends AbstractCar> {
         // Instance of this class
         CarController cc = new CarController();
 
+
         cc.cars.add(new Volvo240());
         cc.cars.add(new Saab95());
         cc.cars.add(new ScaniaTruck(0));
 
         // Start a new view and send a reference of self
         cc.frame = new CarView("CarSim 1.0", cc);
+        cc.frame.drawPanel.carList = cc.cars;
 
         // Start the timer
         cc.timer.start();
@@ -46,11 +49,11 @@ public class CarController<T extends AbstractCar> {
 
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            for (T car : cars) {
+            for (AbstractCar car : cars) {
                 car.move();
                 int x = (int) Math.round(car.getX());
                 int y = (int) Math.round(car.getY());
-                frame.drawPanel.moveIt(x, y, car.getClass());
+                //frame.drawPanel.moveIt(x, y, car.getClass());
 
                 if (x > 700 || x < 0 || y > 700 || y < 0){
                     car.setCurrentSpeed(car.getCurrentSpeed());
@@ -64,22 +67,24 @@ public class CarController<T extends AbstractCar> {
         }
     }
 
+
+
     // Calls the gas method for each car once
     void gas(int amount) {
         double gas = ((double) amount) / 100;
-        for (T car : cars) {
+        for (AbstractCar car : cars) {
             car.gas(gas);
         }
     }
 
     void brake(int amount){
-        for (T car : cars){
+        for (AbstractCar car : cars){
             car.brake(amount);
         }
     }
 
     void turboOn(){
-        for (T car : cars){
+        for (AbstractCar car : cars){
             if (car instanceof Saab95){
                 ((Saab95) car).setTurboOn();
             }
@@ -87,7 +92,7 @@ public class CarController<T extends AbstractCar> {
     }
 
     void turboOff(){
-        for (T car : cars){
+        for (AbstractCar car : cars){
             if (car instanceof Saab95){
                 ((Saab95) car).setTurboOff();
             }
@@ -95,7 +100,7 @@ public class CarController<T extends AbstractCar> {
     }
 
     void raiseBed(){
-        for (T car : cars){
+        for (AbstractCar car : cars){
             if (car instanceof ScaniaTruck){
                 ((ScaniaTruck) car).setRol(ScaniaTruck.raiseOrLower.RAISE);
                 ((ScaniaTruck) car).raiseOrLower();
@@ -105,7 +110,7 @@ public class CarController<T extends AbstractCar> {
     }
 
     void lowerBed(){
-        for (T car : cars){
+        for (AbstractCar car : cars){
             if (car instanceof ScaniaTruck){
                 ((ScaniaTruck) car).setRol(ScaniaTruck.raiseOrLower.LOWER);
                 ((ScaniaTruck) car).raiseOrLower();
@@ -115,14 +120,18 @@ public class CarController<T extends AbstractCar> {
     }
 
     void startCars(){
-        for (T car : cars){
+        for (AbstractCar car : cars){
             car.startEngine();
         }
     }
 
     void stopCars(){
-        for(T car : cars){
+        for(AbstractCar car : cars){
             car.stopEngine();
         }
+    }
+
+    ArrayList<AbstractCar> getList(){
+        return cars;
     }
 }
