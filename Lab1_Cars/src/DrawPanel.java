@@ -20,16 +20,11 @@ public class DrawPanel extends JPanel {
 
     HashMap<String, BufferedImage> carPositions = new HashMap<>();
 
+    CarHolder carHolder = new CarHolder();
+    ArrayList<AbstractCar> carList = carHolder.cars;
 
-    ArrayList<AbstractCar> carList = new ArrayList<>();
 
 
-//void moveIt(AbstractCar car){
- //   if(car.equals(Volvo240.class)){
-
-  //  }
-
-//}
 
 
     // TODO: Make this general for all cars

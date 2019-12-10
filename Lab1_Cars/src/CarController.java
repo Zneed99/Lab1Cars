@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -16,32 +18,15 @@ public class CarController {
     private final int delay = 50;
     // The timer is started with an listener (see below) that executes the statements
     // each step between delays.
-    private Timer timer = new Timer(delay, new TimerListener());
+    public Timer timer = new Timer(delay, new TimerListener());
 
     // The frame that represents this instance View of the MVC pattern
     CarView frame;
     // A list of cars, modify if needed
     public ArrayList<AbstractCar> cars = new ArrayList<>();
+    int gasAmount = 0;
+    int brakeAmount = 1;
 
-
-    //methods:
-
-    public static void main(String[] args) {
-        // Instance of this class
-        CarController cc = new CarController();
-
-
-        cc.cars.add(new Volvo240());
-        cc.cars.add(new Saab95());
-        cc.cars.add(new ScaniaTruck(0));
-
-        // Start a new view and send a reference of self
-        cc.frame = new CarView("CarSim 1.0", cc);
-        cc.frame.drawPanel.carList = cc.cars;
-
-        // Start the timer
-        cc.timer.start();
-    }
 
     /* Each step the TimerListener moves all the cars in the list and tells the
     * view to update its images. Change this method to your needs.
@@ -67,6 +52,72 @@ public class CarController {
     }
 
 
+    public void actions(){
+        frame.gasSpinner.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+                gasAmount = (int) ((JSpinner)e.getSource()).getValue();
+            }
+        });
+
+        // This actionListener is for the gas button only
+        // TODO: Create more for each component as necessary
+        frame.gasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gas(gasAmount);
+            }
+        });
+        frame.brakeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                brake(brakeAmount);
+                System.out.println("Bromsa dårååååå");
+            }
+        });
+
+        frame.turboOnButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                turboOn();
+            }
+        });
+
+        frame.turboOffButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                turboOff();
+            }
+        });
+
+        frame.liftBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                raiseBed();
+            }
+        });
+
+        frame.lowerBedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lowerBed();
+            }
+        });
+
+        frame.startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                startCars();
+            }
+        });
+
+        frame.stopButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                stopCars();
+            }
+        });
+
+    }
 
     // Calls the gas method for each car once
     void gas(int amount) {
@@ -128,9 +179,5 @@ public class CarController {
         for(AbstractCar car : cars){
             car.stopEngine();
         }
-    }
-
-    ArrayList<AbstractCar> getList(){
-        return cars;
     }
 }
