@@ -3,15 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="00e16a0b-0dce-4a99-9cc3-f54a65d67863" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/AbstractCar$Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/AbstractCar$Direction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/AbstractCar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/AbstractCar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/CarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstractCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstractCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScaniaTruck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScaniaTruck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WorkShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WorkShop.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +74,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CarController">
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Application" />
+      <module name="Lab1_Cars" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CarController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CarController" />
       <module name="Lab1_Cars" />
@@ -86,16 +94,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AbstractCarTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AbstractCarTest.testGasHighValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Lab1_Cars" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AbstractCarTest" />
-      <option name="METHOD_NAME" value="testGasHighValue" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,11 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Application" />
         <item itemvalue="Application.CarController" />
         <item itemvalue="JUnit.All in Lab1_Cars" />
         <item itemvalue="JUnit.AbstractCarTest" />
         <item itemvalue="JUnit.AbstractCarTest.testGasLowValue" />
-        <item itemvalue="JUnit.AbstractCarTest.testGasHighValue" />
       </list>
     </recent_temporary>
   </component>
@@ -166,9 +164,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="hotfuzz" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/OOD_LAB1_Cars$AbstractCarTest_testStopEngine.ic" NAME="AbstractCarTest.testStopEngine Coverage Results" MODIFIED="1573653270669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/OOD_LAB1_Cars$All_in_Lab1_Cars.ic" NAME="All in Lab1_Cars Coverage Results" MODIFIED="1575132268293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/OOD_LAB1_Cars$AbstractCarTest_testMove.ic" NAME="AbstractCarTest.testMove Coverage Results" MODIFIED="1573653081386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/OOD_LAB1_Cars$AbstractCarTest.ic" NAME="AbstractCarTest Coverage Results" MODIFIED="1573824248843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OOD_LAB1_Cars$AbstractCarTest_testMove.ic" NAME="AbstractCarTest.testMove Coverage Results" MODIFIED="1573653081386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OOD_LAB1_Cars$All_in_Lab1_Cars.ic" NAME="All in Lab1_Cars Coverage Results" MODIFIED="1575132268293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OOD_LAB1_Cars$AbstractCarTest_testStopEngine.ic" NAME="AbstractCarTest.testStopEngine Coverage Results" MODIFIED="1573653270669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

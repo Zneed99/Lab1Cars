@@ -21,11 +21,17 @@ public class CarController {
     public Timer timer = new Timer(delay, new TimerListener());
 
     // The frame that represents this instance View of the MVC pattern
-    CarView frame;
+    private CarView frame;
+    private CarHolder carHolder;
     // A list of cars, modify if needed
-    public ArrayList<AbstractCar> cars = new ArrayList<>();
-    int gasAmount = 0;
-    int brakeAmount = 1;
+
+    public CarController(CarHolder carHolder, CarView frame) {
+        this.carHolder = carHolder;
+        this.frame = frame;
+    }
+
+    private int gasAmount = 0;
+    private final int brakeAmount = 1;
 
 
     /* Each step the TimerListener moves all the cars in the list and tells the
@@ -34,7 +40,7 @@ public class CarController {
 
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            for (AbstractCar car : cars) {
+            for (AbstractCar car : carHolder.cars) {
                 car.move();
                 int x = (int) Math.round(car.getX());
                 int y = (int) Math.round(car.getY());
@@ -122,19 +128,19 @@ public class CarController {
     // Calls the gas method for each car once
     void gas(int amount) {
         double gas = ((double) amount) / 100;
-        for (AbstractCar car : cars) {
+        for (AbstractCar car : carHolder.cars) {
             car.gas(gas);
         }
     }
 
     void brake(int amount){
-        for (AbstractCar car : cars){
+        for (AbstractCar car : carHolder.cars){
             car.brake(amount);
         }
     }
 
     void turboOn(){
-        for (AbstractCar car : cars){
+        for (AbstractCar car : carHolder.cars){
             if (car instanceof Saab95){
                 ((Saab95) car).setTurboOn();
             }
@@ -142,7 +148,7 @@ public class CarController {
     }
 
     void turboOff(){
-        for (AbstractCar car : cars){
+        for (AbstractCar car : carHolder.cars){
             if (car instanceof Saab95){
                 ((Saab95) car).setTurboOff();
             }
@@ -150,7 +156,7 @@ public class CarController {
     }
 
     void raiseBed(){
-        for (AbstractCar car : cars){
+        for (AbstractCar car : carHolder.cars){
             if (car instanceof ScaniaTruck){
                 ((ScaniaTruck) car).setRol(ScaniaTruck.raiseOrLower.RAISE);
                 ((ScaniaTruck) car).raiseOrLower();
@@ -160,7 +166,7 @@ public class CarController {
     }
 
     void lowerBed(){
-        for (AbstractCar car : cars){
+        for (AbstractCar car : carHolder.cars){
             if (car instanceof ScaniaTruck){
                 ((ScaniaTruck) car).setRol(ScaniaTruck.raiseOrLower.LOWER);
                 ((ScaniaTruck) car).raiseOrLower();
@@ -170,13 +176,13 @@ public class CarController {
     }
 
     void startCars(){
-        for (AbstractCar car : cars){
+        for (AbstractCar car : carHolder.cars){
             car.startEngine();
         }
     }
 
     void stopCars(){
-        for(AbstractCar car : cars){
+        for(AbstractCar car : carHolder.cars){
             car.stopEngine();
         }
     }

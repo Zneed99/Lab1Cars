@@ -5,8 +5,8 @@ public class CarHolder {
 
 
     public CarHolder() {
-        this.cars.add(new Volvo240());
-        this.cars.add(new ScaniaTruck(0));
-        this.cars.add(new Saab95());
+        cars.add(new Volvo240());
+        cars.add(new ScaniaTruck(0));
+        cars.add(new Saab95());
     }
 }

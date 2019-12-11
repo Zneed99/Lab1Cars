@@ -3,7 +3,7 @@ import java.util.List;
 /**
  *Workshop has a storage of "cars"
  */
-public class WorkShop<T extends AbstractCar> {
+public class    WorkShop<T extends AbstractCar> {
     private Storage<T> storage;
     private int x;
     private int y;
