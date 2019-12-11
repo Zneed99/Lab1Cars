@@ -6,6 +6,7 @@ public class Application {
         // Start a new view and send a reference of self
         //cc.frame = new CarView("CarSim 1.0");
         frame.drawPanel.carList = carHolder.cars;
+        frame.infoView.cars = carHolder.cars;
         cc.actions();
         // Start the timer
         cc.timer.start();

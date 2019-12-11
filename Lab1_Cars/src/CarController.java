@@ -50,7 +50,7 @@ public class CarController {
                     car.setCurrentSpeed(car.getCurrentSpeed());
                     car.uTurn();
                 }
-
+                frame.infoView.printLabels();
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
             }

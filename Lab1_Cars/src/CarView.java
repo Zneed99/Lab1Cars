@@ -21,10 +21,12 @@ public class CarView extends JFrame{
     //CarController carC;
 
     DrawPanel drawPanel = new DrawPanel(X, Y-240);
+    InfoView infoView = new InfoView();
 
     JPanel controlPanel = new JPanel();
 
     JPanel gasPanel = new JPanel();
+    JPanel infoPanel = new JPanel();
     JSpinner gasSpinner = new JSpinner();
     JLabel gasLabel = new JLabel("Amount of gas");
 
@@ -53,7 +55,10 @@ public class CarView extends JFrame{
         this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
 
         this.add(drawPanel);
-
+        infoPanel.setLayout(new BorderLayout());
+        infoPanel.add(infoView.infoLabel,BorderLayout.PAGE_START);
+        infoPanel.add(infoView.infoLabel,BorderLayout.PAGE_END);
+        this.add(infoPanel);
         SpinnerModel spinnerModel =
                 new SpinnerNumberModel(0, //initial value
                         0, //min
