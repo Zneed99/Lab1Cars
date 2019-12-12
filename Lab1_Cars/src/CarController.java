@@ -19,6 +19,7 @@ public class CarController {
     // The timer is started with an listener (see below) that executes the statements
     // each step between delays.
     public Timer timer = new Timer(delay, new TimerListener());
+    InfoView infoView;
 
     // The frame that represents this instance View of the MVC pattern
     private CarView frame;
@@ -50,7 +51,6 @@ public class CarController {
                     car.setCurrentSpeed(car.getCurrentSpeed());
                     car.uTurn();
                 }
-                frame.infoView.printLabels();
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
             }
