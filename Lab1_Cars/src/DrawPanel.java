@@ -19,9 +19,7 @@ public class DrawPanel extends JPanel {
     // To keep track of a singel cars position
 
     HashMap<String, BufferedImage> carPositions = new HashMap<>();
-
-    CarHolder carHolder = new CarHolder();
-    ArrayList<AbstractCar> carList = carHolder.cars;
+    ArrayList<AbstractCar> cars;
 
 
 
@@ -29,10 +27,11 @@ public class DrawPanel extends JPanel {
 
     // TODO: Make this general for all cars
     // Initializes the panel and reads the images
-    public DrawPanel(int x, int y) {
+    public DrawPanel(int x, int y, ArrayList<AbstractCar> cars) {
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.cyan);
+        this.cars = cars;
 
         // Print an error message in case file is not found with a try/catch block
         try {
@@ -57,7 +56,7 @@ public class DrawPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         int distance = 0;
-        for (AbstractCar cars : carList){
+        for (AbstractCar cars : cars){
             g.drawImage(carPositions.get(cars.getModelName()) ,(int) cars.getX(), (int) cars.getY() + distance, null); // see javadoc for more info on the parameters
             distance += 100;
         }

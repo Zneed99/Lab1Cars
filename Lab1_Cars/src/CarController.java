@@ -53,6 +53,8 @@ public class CarController {
                 }
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.repaint();
+                frame.infoPanel.updateLabels();
+
             }
         }
     }
@@ -123,6 +125,20 @@ public class CarController {
             }
         });
 
+        frame.addCarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                addCar();
+            }
+        });
+
+        frame.removeCarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                removeCar();
+            }
+        });
+
     }
 
     // Calls the gas method for each car once
@@ -177,13 +193,34 @@ public class CarController {
 
     void startCars(){
         for (AbstractCar car : carHolder.cars){
-            car.startEngine();
+            if (car.getCurrentSpeed() == 0){
+                car.startEngine();
+            }
         }
     }
 
     void stopCars(){
         for(AbstractCar car : carHolder.cars){
             car.stopEngine();
+        }
+    }
+
+    void addCar(){
+        if (carHolder.cars.size() < 10){
+            carHolder.cars.add(CarHolder.createRandomVehicle());
+            frame.infoPanel.printLabels();
+            frame.repaint();
+            System.out.println("Added Car Correctly");
+        }
+    }
+
+    void removeCar(){
+        if (carHolder.cars.size() != 0)
+        {
+            carHolder.cars.remove(carHolder.cars.size() - 1);
+            frame.infoPanel.printLabels();
+            frame.repaint();
+            System.out.println("Removed the saddest Car");
         }
     }
 }

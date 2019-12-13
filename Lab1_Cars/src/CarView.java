@@ -20,15 +20,19 @@ public class CarView extends JFrame{
     // The controller member
     //CarController carC;
 
-    DrawPanel drawPanel = new DrawPanel(X, Y-240);
+    DrawPanel drawPanel;
 
-    InfoView infoPanel = new InfoView(200,200);
+    InfoView infoPanel;
     JPanel controlPanel = new JPanel();
+    JPanel addRemovePanel = new JPanel();
 
     JPanel gasPanel = new JPanel();
     JSpinner gasSpinner = new JSpinner();
     JLabel gasLabel = new JLabel("Amount of gas");
 
+
+    JButton removeCarButton = new JButton("Remove car");
+    JButton addCarButton = new JButton("Add car");
     JButton gasButton = new JButton("Gas");
     JButton brakeButton = new JButton("Brake");
     JButton turboOnButton = new JButton("Saab Turbo on");
@@ -40,8 +44,11 @@ public class CarView extends JFrame{
     JButton stopButton = new JButton("Stop all cars");
 
     // Constructor
-    public CarView(String framename){
+    public CarView(String framename,InfoView infoPanel, DrawPanel drawPanel){
+        this.drawPanel = drawPanel;
+        this.infoPanel = infoPanel;
         initComponents(framename);
+
     }
 
 
@@ -55,7 +62,6 @@ public class CarView extends JFrame{
 
         this.add(drawPanel);
         this.add(infoPanel);
-
         SpinnerModel spinnerModel =
                 new SpinnerNumberModel(0, //initial value
                         0, //min
@@ -78,6 +84,12 @@ public class CarView extends JFrame{
         controlPanel.setPreferredSize(new Dimension((X/2)+4, 200));
         this.add(controlPanel);
         controlPanel.setBackground(Color.CYAN);
+
+        addRemovePanel.setLayout(new GridLayout(2,1));
+        addRemovePanel.add(addCarButton, 0);
+        addRemovePanel.add(removeCarButton, 1);
+        addRemovePanel.setPreferredSize(new Dimension((X/4)+4, 200));
+        this.add(addRemovePanel);
 
 
         startButton.setBackground(Color.blue);

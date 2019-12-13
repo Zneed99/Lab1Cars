@@ -7,7 +7,9 @@
       <change beforePath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1_Cars/CarView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DrawPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DrawPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/InfoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InfoView.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,6 +23,9 @@
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="357" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="OOD_LAB1_Cars" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -151,7 +156,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1576073088872</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="made application better">
+      <created>1576156533791</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1576156533791</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -187,5 +198,6 @@
     <SUITE FILE_PATH="coverage/OOD_LAB1_Cars$AbstractCarTest_testMove.ic" NAME="AbstractCarTest.testMove Coverage Results" MODIFIED="1573653081386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/OOD_LAB1_Cars$All_in_Lab1_Cars.ic" NAME="All in Lab1_Cars Coverage Results" MODIFIED="1575132268293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/OOD_LAB1_Cars$AbstractCarTest_testStopEngine.ic" NAME="AbstractCarTest.testStopEngine Coverage Results" MODIFIED="1573653270669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/OOD_LAB1_Cars$Application.ic" NAME="Application Coverage Results" MODIFIED="1576164091412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
